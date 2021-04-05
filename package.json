@@ -21,9 +21,7 @@
     "expo-constants": "~9.3.0",
     "expo-font": "~8.4.0",
     "expo-linking": "~2.0.0",
-    "expo-splash-screen": "~0.8.0",
     "expo-status-bar": "~1.0.3",
-    "expo-web-browser": "~8.6.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "~0.63.4",
@@ -44,7 +42,6 @@
     "jasmine": "^3.7.0",
     "jest": "^26.6.3",
     "jest-circus": "^26.6.3",
-    "jest-expo": "~40.0.0",
     "react-test-renderer": "~16.13.1",
     "typescript": "~4.0.0"
   },
@@ -52,21 +49,6 @@
   "name": "ejectedExpoDetoxAndroid",
   "version": "1.0.0",
   "detox": {
-    "testRunner": "jest",
-    "runnerConfig": "e2e/config.json",
-    "configurations": {
-      "ios": {
-        "device": "simulator",
-        "app": "ios"
-      },
-      "android": {
-        "device": "emulator",
-        "app": "android",
-        "binaryPath": "android/app/build/outputs/apk/release/app-release.apk",
-        "build": "cd android; ./gradlew clean; ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release; cd ..",
-        "type": "android.attached",
-        "name": "Pixel_2_API_29"
-      }
-    }
+    "extends": "./detox.config"
   }
 }
