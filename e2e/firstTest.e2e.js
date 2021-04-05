@@ -1,4 +1,7 @@
-import {device, expect, element, by} from 'detox';
+import { device, expect } from 'detox';
+
+const sleep = duration =>
+    new Promise(resolve => setTimeout(() => resolve(), duration));
 
 describe('Example', () => {
   beforeAll(async () => {
@@ -10,7 +13,7 @@ describe('Example', () => {
   });
 
   it('should have welcome screen', async () => {
-    console.log(element(by.id('test')))
+    await sleep(3000)
     await expect(element(by.id('test'))).toBeVisible();
   });
 });

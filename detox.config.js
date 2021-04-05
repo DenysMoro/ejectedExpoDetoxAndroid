@@ -4,6 +4,7 @@ module.exports = {
   "apps": {
     "android": {
       "type": "android.apk",
+      "build": "cd android; ./gradlew clean; ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release; cd ..",
       "binaryPath": "android/app/build/outputs/apk/release/app-release.apk"
     }
   },
